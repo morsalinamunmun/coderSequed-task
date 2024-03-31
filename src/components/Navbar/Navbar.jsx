@@ -3,33 +3,34 @@ import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
     const menus = <>
-              <li><NavLink to='/' className="hover:text-sky-600 border-b-2 focus:text-sky-600 focus:border-sky-600 pr-2">Home</NavLink></li>
-              <li><NavLink to='/dashboard' className="hover:text-sky-600 border-b-2 focus:text-sky-600 focus:border-sky-600 pr-2">Dashboard</NavLink></li>
-              <li><NavLink to='/fqa' className="hover:text-sky-600 border-b-2 focus:text-sky-600 focus:border-sky-600 pr-2">F</NavLink></li>
-              <li><NavLink to='/allTask' className="hover:text-sky-600 border-b-2 focus:text-sky-600 focus:border-sky-600 pr-2">Task List</NavLink></li>
-              {/* <li><NavLink to='/login' className='border-orange-500 rounded-lg'>Log In</NavLink></li> */}
+        <li><NavLink to='/' className="hover:text-sky-600 focus:border-b-2 focus:text-sky-600 focus:border-sky-600 pr-2">Home</NavLink></li>
+        <li><NavLink to='/dashboard' className="hover:text-sky-600 focus:border-b-2 focus:text-sky-600 focus:border-sky-600 pr-2">Dashboard</NavLink></li>
+        <li><NavLink to='/fqa' className="hover:text-sky-600 focus:border-b-2 focus:text-sky-600 focus:border-sky-600 pr-2">F</NavLink></li>
+        <li><NavLink to='/allTask' className="hover:text-sky-600 focus:border-b-2 focus:text-sky-600 focus:border-sky-600 pr-2">Task List</NavLink></li>
+        {/* <li><NavLink to='/login' className='border-orange-500 rounded-lg'>Log In</NavLink></li> */}
     </>
 
     return (
         <div className="navbar bg-base-100 ">
-            <div className="lg:w-[30%]">
+            <div className="navbar-start">
                 <div className="dropdown mr-10 md:mr-40 lg:mr-0">
                     <label tabIndex={0} className=" lg:hidden">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                     </label>
-                    <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                        {menus}                    
+                    <ul tabIndex={0} className="dropdown-content mt-3 z-[1] p-2 bg-base-100 w-52">
+                        {menus}
                     </ul>
                 </div>
                 {/* <img className="w-14" src={logo} alt="" /> */}
-                <Link to='/' className="ml-3 font-semibold normal-case text-xl"><span className="text-orange-500">SCC </span>Task Management</Link>
+                <Link to='/' className="ml-20 lg:ml-0 font-semibold normal-case text-xl"><span className="text-sky-600">CSq </span>Task Manager</Link>
             </div>
-            <div className="w-[70%] lg:ml-64 hidden lg:flex">
+            <div className="navbar-center hidden lg:flex">
                 <ul className="menu-horizontal px-1 gap-2">
                     {menus}
-                </ul>  
+                </ul>
             </div>
-            {/* {
+            <div className="navbar-end">
+                {/* {
                     user ? 
                     <>
                          <div className="dropdown dropdown-end">
@@ -48,7 +49,8 @@ const Navbar = () => {
                     </> : 
                     <Link to='/login' className= "font-semibold btn border-0 bg-orang-500 text-white">Log In</Link>
             } */}
-            <Link to='/login' className= "font-semibold btn border-0 bg-orang-500 text-white">Log In</Link>
+                <Link to='/login' className="font-semibold border-0 text-sky-600">Log In</Link>
+            </div>
         </div>
     );
 };
