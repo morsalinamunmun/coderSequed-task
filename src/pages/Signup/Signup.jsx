@@ -13,7 +13,7 @@ const Signup = () => {
    
     return (
         <>
-            <div className="hero min-h-screen py-20 max-w-5xl mx-auto">
+            <div className="hero min-h-screen py-20 max-w-5xl mx-auto mt-10">
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <div className="text-center lg:text-left space-y-5">
                         <h1 className="text-5xl font-bold">Sign Up now!</h1>

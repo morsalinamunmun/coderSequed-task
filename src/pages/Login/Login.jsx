@@ -3,7 +3,7 @@ import SocialLogin from "../../components/SocialLogin/SocialLogin";
 const Login = () => {
     return (
         <>
-        <div className="hero min-h-screen">
+        <div className="hero min-h-screen mt-10">
            
             <div className="flex flex-col lg:flex-row-reverse shadow-2xl   mx-auto">
                 <div className="text-center pt-20 p-5 my-10 max-w-lg w-full rounded  ">
