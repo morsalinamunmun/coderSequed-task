@@ -1,4 +1,5 @@
 
+import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
@@ -10,8 +11,24 @@ const Navbar = () => {
         {/* <li><NavLink to='/login' className='border-orange-500 rounded-lg'>Log In</NavLink></li> */}
     </>
 
+const [scrolling, setScrolling] = useState(false);
+
+useEffect(() => {
+    const handleScroll = () => {
+        if (window.scrollY > 0) {
+            setScrolling(true);
+        } else {
+            setScrolling(false);
+        }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+        window.removeEventListener("scroll", handleScroll);
+    };
+}, []);
     return (
-        <div className="navbar bg-base-100 ">
+        <div className={`navbar fixed top-0 left-0 right-0 z-50 ${scrolling ? 'bg-base-100' : ''}`}>
             <div className="navbar-start">
                 <div className="dropdown mr-10 md:mr-40 lg:mr-0">
                     <label tabIndex={0} className=" lg:hidden">
@@ -49,7 +66,7 @@ const Navbar = () => {
                     </> : 
                     <Link to='/login' className= "font-semibold btn border-0 bg-orang-500 text-white">Log In</Link>
             } */}
-                <Link to='/login' className="font-semibold border-0 text-sky-600">Log In</Link>
+                <Link to='/login' className="font-semibold border-0 p-2 rounded text-sky-600 bg-white">Log In</Link>
             </div>
         </div>
     );

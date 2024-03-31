@@ -25,21 +25,21 @@ const Signup = () => {
                                 <label className="label">
                                     <span className="label-text">Name</span>
                                 </label>
-                                <input type="text" {...register("name", { required: true })} name="name" placeholder="Name" className="outline outline-gray-300 p-2 focus:border-sky-600 focus:border-2" required />
+                                <input type="text" {...register("name", { required: true })} name="name" placeholder="Name" className="outline outline-gray-300 p-2 focus:border-sky-600 focus:border-2 rounded" required />
                                 {errors.name && <span className="text-red-600">Name is required</span>}
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Photo Url</span>
                                 </label>
-                                <input type="text" {...register("photoURL", { required: true })} placeholder="Photo Url" className="outline outline-gray-300 p-2 focus:border-sky-600 focus:border-2" required />
+                                <input type="text" {...register("photoURL", { required: true })} placeholder="Photo Url" className="outline outline-gray-300 p-2 focus:border-sky-600 focus:border-2 rounded" required />
                                 {errors.photoURL && <span className="text-red-600">Photo Url is required</span>}
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Email</span>
                                 </label>
-                                <input type="email" {...register("email", { required: true, pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, })} name="email" placeholder="Email" className="outline outline-gray-300 p-2 focus:border-sky-600 focus:border-2" required />
+                                <input type="email" {...register("email", { required: true, pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, })} name="email" placeholder="Email" className="outline outline-gray-300 p-2 focus:border-sky-600 focus:border-2 rounded" required />
                                 {errors.email && errors.email.type === "required" && (
                                     <span className="text-red-600">Email is required</span>
                                 )}
@@ -54,7 +54,7 @@ const Signup = () => {
                                 <input type="password" {...register("password", {
                                     required: true, minLength: 6, maxLength: 20,
                                     pattern: /(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z])/
-                                })} name="password" placeholder="password" className="outline outline-gray-300 p-2 focus:border-sky-600 focus:border-2" required />
+                                })} name="password" placeholder="password" className="outline outline-gray-300 p-2 focus:border-sky-600 focus:border-2 rounded" required />
                                 {errors.password?.type === "required" && <p className="text-red-600">Password is required</p>}
                                 {errors.password?.type === "minLength" && <p className="text-red-600">Password must be 6 character</p>}
                                 {errors.password?.type === "maxLength" && <p className="text-red-600">Password must be less than 20 character</p>}
@@ -64,7 +64,7 @@ const Signup = () => {
                                 </label> */}
                             </div>
                             <div className="form-control mt-6">
-                                <button className="p-2 bg-sky-600 text-white border-0">Sign Up</button>
+                                <button className="p-2 bg-sky-600 text-white border-0 rounded">Sign Up</button>
                             </div>
                         </form>
                         <p>Already have an account? <Link to="/login" className='text-sky-500'>Log In</Link></p>

@@ -18,19 +18,19 @@ const Login = () => {
                             <label className="label">
                                 <span className="label-text">Email</span>
                             </label>
-                            <input type="email" name="email" placeholder="Your Email" className="outline outline-gray-300 p-2 focus:border-sky-600 focus:border-2" required />
+                            <input type="email" name="email" placeholder="Your Email" className="outline outline-gray-300 p-2 focus:border-sky-600 focus:border-2 rounded" required />
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
-                            <input type="password" name="password" placeholder="Password" className="outline outline-gray-300 p-2 focus:border-sky-600 focus:border-2" required />
+                            <input type="password" name="password" placeholder="Password" className="outline outline-gray-300 p-2 focus:border-sky-600 focus:border-2 rounded" required />
                             <label className="label">
                                 <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                             </label>
                         </div>
                         <div className="form-control mt-6">
-                            <button className="p-2 bg-sky-600 text-white border-0">Log In</button>
+                            <button className="p-2 bg-sky-600 text-white border-0 rounded">Log In</button>
                         </div>
                         
                         <SocialLogin/>
