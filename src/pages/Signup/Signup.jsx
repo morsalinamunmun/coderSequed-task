@@ -3,13 +3,23 @@ import { useForm } from 'react-hook-form';
 
 import { Link } from "react-router-dom";
 import SocialLogin from '../../components/SocialLogin/SocialLogin';
+import { useContext } from 'react';
+import { AuthContext } from '../../Provider/AuthProvider';
 
 
 const Signup = () => {
     const {
         register,
+        handleSubmit,
         formState: { errors },
     } = useForm();
+    const {createUser} = useContext(AuthContext);
+    const onSubmit= data =>{
+        createUser(data.email, data.password)
+        .then(result=>{
+            
+        })
+    }
    
     return (
         <>
@@ -20,7 +30,7 @@ const Signup = () => {
                         <div className='border border-sky-600 p-2'><SocialLogin/></div>
                     </div>
                     <div className="card shrink-0 w-full max-w-sm ">
-                        <form className="card-body">
+                        <form className="card-body" onSubmit={handleSubmit(onSubmit)}>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Name</span>
