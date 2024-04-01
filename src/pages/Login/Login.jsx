@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import SocialLogin from "../../components/SocialLogin/SocialLogin";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
-import toast from "react-hot-toast";
+import {toast, Toaster} from "react-hot-toast";
 const Login = () => {
     const [loginError, setLoginError] = useState('');
     const { signIn } = useContext(AuthContext);
@@ -65,6 +65,7 @@ const Login = () => {
                         </form>
                     </div>
                 </div>
+                <Toaster/>
             </div>
         </>
     );

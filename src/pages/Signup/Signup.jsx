@@ -5,25 +5,42 @@ import { Link } from "react-router-dom";
 import SocialLogin from '../../components/SocialLogin/SocialLogin';
 import { useContext } from 'react';
 import { AuthContext } from '../../Provider/AuthProvider';
+import useAxiosPublic from '../../hooks/UseAxiosPublic';
+import Swal from 'sweetalert2';
 
 
 const Signup = () => {
+    const axiosPublic = useAxiosPublic();
     const {
         register,
         handleSubmit,
+        reset,
         formState: { errors },
     } = useForm();
     const {createUser, updateUserProfile} = useContext(AuthContext);
     const onSubmit= data =>{
         createUser(data.email, data.password)
         .then(result=>{
+            console.log(result.user);
             updateUserProfile(data.name, data.photoURL)
                     .then(() => {
                         const userInfo = {
                             name: data.name,
                             email: data.email
                         }
-                       
+                        axiosPublic.post('/users', userInfo)
+                        .then(res=>{
+                            if(res.data.insertedId){
+                                reset();
+                                Swal.fire({
+                                    position: 'top-end',
+                                    icon: 'success',
+                                    title: 'User created successfully',
+                                    showConfirmButton: false,
+                                    timer: 1500
+                                });
+                            }
+                        })
                     })
                     .catch(error => console.log(error))
         })
