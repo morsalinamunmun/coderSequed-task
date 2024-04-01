@@ -1,8 +1,10 @@
 
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const Navbar = () => {
+    const {user} = useContext(AuthContext);
     const menus = <>
         <li><NavLink to='/' className="hover:text-sky-600 focus:border-b-2 focus:text-sky-600 focus:border-sky-600 pr-2">Home</NavLink></li>
         <li><NavLink to='/dashboard' className="hover:text-sky-600 focus:border-b-2 focus:text-sky-600 focus:border-sky-600 pr-2">Dashboard</NavLink></li>
@@ -47,7 +49,7 @@ useEffect(() => {
                 </ul>
             </div>
             <div className="navbar-end">
-                {/* {
+                {
                     user ? 
                     <>
                          <div className="dropdown dropdown-end">
@@ -56,17 +58,16 @@ useEffect(() => {
                                     <img src={user?.photoURL} alt="" />
                                 </div>
                             </label>
-                            <ul tabIndex={0} className="p-2 shadow menu menu-sm dropdown-content z-[1] bg-base-100 rounded-box w-36 text-orange-500">
+                            <ul tabIndex={0} className="p-2 shadow menu menu-sm dropdown-content z-[1] bg-base-100 rounded-box w-36 text-sky-600">
                                 <li className="font-semibold text-center mb-2">{user?.displayName}</li>
                                 <Link to='/dashboard'>Dashboard</Link>
                                 <div className="divider"></div>
-                                <li><a onClick={handleLogOut} className="font-semibold btn border-0 bg-orange-500 text-white">Sign Out</a></li>
+                                <li><a className="font-semibold  text-sky-600">Sign Out</a></li>
                             </ul>
                         </div>                       
                     </> : 
-                    <Link to='/login' className= "font-semibold btn border-0 bg-orang-500 text-white">Log In</Link>
-            } */}
-                <Link to='/login' className="font-semibold border-0 p-2 rounded text-sky-600 bg-white">Log In</Link>
+                    <Link to='/login' className="font-semibold border-0 p-2 rounded text-sky-600 bg-white">Log In</Link>
+            }
             </div>
         </div>
     );
