@@ -4,7 +4,7 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 
 const Navbar = () => {
-    const {user} = useContext(AuthContext);
+    const {user, logOut} = useContext(AuthContext);
     const menus = <>
         <li><NavLink to='/' className="hover:text-sky-600 focus:border-b-2 focus:text-sky-600 focus:border-sky-600 pr-2">Home</NavLink></li>
         <li><NavLink to='/dashboard' className="hover:text-sky-600 focus:border-b-2 focus:text-sky-600 focus:border-sky-600 pr-2">Dashboard</NavLink></li>
@@ -29,6 +29,11 @@ useEffect(() => {
         window.removeEventListener("scroll", handleScroll);
     };
 }, []);
+const handleLogOut = ()=>{
+    logOut()
+    .then(()=> console.log('logout'))
+    .catch(error=> console.error(error))
+}
     return (
         <div className={`navbar fixed top-0 left-0 right-0 z-50 ${scrolling ? 'bg-base-100' : ''}`}>
             <div className="navbar-start">
@@ -62,7 +67,7 @@ useEffect(() => {
                                 <li className="font-semibold text-center mb-2">{user?.displayName}</li>
                                 <Link to='/dashboard'>Dashboard</Link>
                                 <div className="divider"></div>
-                                <li><a className="font-semibold  text-sky-600">Sign Out</a></li>
+                                <li><a onClick={handleLogOut} className="font-semibold  text-sky-600">Sign Out</a></li>
                             </ul>
                         </div>                       
                     </> : 

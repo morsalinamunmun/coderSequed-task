@@ -25,6 +25,7 @@ const Login = () => {
                 setLoginError('Invalid email or password')
             })
     }
+
     return (
         <>
             <div className="hero min-h-screen mt-10">
