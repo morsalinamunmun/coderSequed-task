@@ -13,11 +13,19 @@ const Signup = () => {
         handleSubmit,
         formState: { errors },
     } = useForm();
-    const {createUser} = useContext(AuthContext);
+    const {createUser, updateUserProfile} = useContext(AuthContext);
     const onSubmit= data =>{
         createUser(data.email, data.password)
         .then(result=>{
-            
+            updateUserProfile(data.name, data.photoURL)
+                    .then(() => {
+                        const userInfo = {
+                            name: data.name,
+                            email: data.email
+                        }
+                       
+                    })
+                    .catch(error => console.log(error))
         })
     }
    
