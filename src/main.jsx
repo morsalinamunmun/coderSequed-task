@@ -14,6 +14,7 @@ import AuthProvider from './Provider/AuthProvider';
 import Dashboard from './pages/Dashboard/Dashboard';
 import UserProfile from './pages/Dashboard/UserDashboard/Userprofile/UserProfile';
 import AddTask from './pages/Dashboard/UserDashboard/AddTask/AddTask';
+import AllTask from './pages/Dashboard/UserDashboard/AllTask/AllTask';
 
 const router = createBrowserRouter([
   {
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
       {
         path: 'addTask',
         element: <AddTask/>
+      },
+      {
+        path: 'allTask',
+        element: <AllTask/>
       }
     ]
   }

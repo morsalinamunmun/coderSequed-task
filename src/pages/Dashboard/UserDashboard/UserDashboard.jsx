@@ -65,7 +65,7 @@ const UserDashboard = ({ isSideMenuOpen, toggleSideMenu }) => {
                                     <li className="relative px-2 py-1 ">
                                         <NavLink
                                             className="inline-flex items-center w-full text-sm font-semibold text-blue-950 transition-colors duration-150 cursor-pointer hover:text-blue-600py-2 px-4"
-                                            to={"alldoctors"}
+                                            to={"allTask"}
                                         >
                                             <BiTask className="text-lg" />
                                             <span className="ml-4">All Task</span>
@@ -91,7 +91,7 @@ const UserDashboard = ({ isSideMenuOpen, toggleSideMenu }) => {
                 </div>
             </aside>
             <div className="fixed inset-0 -z-10 flex items-end bg-slate-300 bg-opacity-50 sm:items-center sm:justify-center"></div>
-             {/* <aside
+             <aside
                 className={`fixed inset-y-0 z-20 flex-shrink-0 w-64 mt-16  ease-in-out duration-300 overflow-y-auto bg-white
         ${!isSideMenuOpen ? "-translate-x-full " : "translate-x-0"}
         
@@ -119,30 +119,22 @@ const UserDashboard = ({ isSideMenuOpen, toggleSideMenu }) => {
                                     <li className="relative px-2 py-1 ">
                                         <NavLink
                                             className="inline-flex items-center w-full text-sm font-semibold text-blue-950 transition-colors duration-150 cursor-pointer hover:text-blue-600py-2 px-4"
-                                            to={"/specialties"}
+                                            to={"addTask"}
                                         >
-                                            
-                                            <span className="ml-4">Specialties</span>
+                                            <IoMdAdd className="text-lg" />
+                                            <span className="ml-4">Add Task</span>
                                         </NavLink>
                                     </li>
                                     <li className="relative px-2 py-1 ">
                                         <NavLink
                                             className="inline-flex items-center w-full text-sm font-semibold text-blue-950 transition-colors duration-150 cursor-pointer hover:text-blue-600py-2 px-4"
-                                            to="alldoctors"
+                                            to="allTask"
                                         >
-                                            
-                                            <span className="ml-4">All Doctors</span>
+                                            <BiTask className="text-lg" />
+                                            <span className="ml-4">All Task</span>
                                         </NavLink>
                                     </li>
-                                    <li className="relative px-2 py-1 ">
-                                        <NavLink
-                                            className="inline-flex items-center w-full text-sm font-semibold text-blue-950 transition-colors duration-150 cursor-pointer hover:text-blue-600py-2 px-4"
-                                            to="userAppointment"
-                                        >
-                                            
-                                            <span className="ml-4">Appointments</span>
-                                        </NavLink>
-                                    </li>
+                                    
                                 </ul>
                             </div>
                         </div>
@@ -161,7 +153,7 @@ const UserDashboard = ({ isSideMenuOpen, toggleSideMenu }) => {
                         </div>
                     </div>
                 </div>
-            </aside> */}
+            </aside>
             <div className="flex flex-col flex-1 w-full overflow-y-auto ">
                  <header className="z-40 py-5 bg-white fixed top-0 w-[1030px]">
                     <div className="flex justify-between">
