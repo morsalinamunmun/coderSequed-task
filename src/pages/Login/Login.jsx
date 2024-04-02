@@ -60,9 +60,8 @@ const Login = () => {
                             <div className="form-control mt-6">
                                 <button className="p-2 bg-sky-600 text-white border-0 rounded">Log In</button>
                             </div>
-
-                            <SocialLogin />
                         </form>
+                        <SocialLogin />
                     </div>
                 </div>
                 <Toaster/>

@@ -11,32 +11,49 @@ import Home from './pages/Home/Home';
 import Signup from './pages/Signup/Signup';
 import Login from './pages/Login/Login';
 import AuthProvider from './Provider/AuthProvider';
+import Dashboard from './pages/Dashboard/Dashboard';
+import UserProfile from './pages/Dashboard/UserDashboard/Userprofile/UserProfile';
+import AddTask from './pages/Dashboard/UserDashboard/AddTask/AddTask';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Layout/>,
-    children:[
+    element: <Layout />,
+    children: [
       {
         path: '/',
-        element: <Home/>
+        element: <Home />
       },
       {
         path: '/login',
-        element: <Login/>
+        element: <Login />
       },
       {
         path: '/signup',
-        element: <Signup/>
+        element: <Signup />
       }
     ]
   },
+  {
+    path: '/dashboard',
+    element: <Dashboard />,
+    children: [
+      {
+        path: 'home',
+        element: <UserProfile />
+      },
+      {
+        path: 'addTask',
+        element: <AddTask/>
+      }
+    ]
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <AuthProvider>
-    <RouterProvider router={router} />
+      <RouterProvider router={router} />
     </AuthProvider>
   </React.StrictMode>,
 )
