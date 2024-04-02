@@ -15,6 +15,7 @@ import Dashboard from './pages/Dashboard/Dashboard';
 import UserProfile from './pages/Dashboard/UserDashboard/Userprofile/UserProfile';
 import AddTask from './pages/Dashboard/UserDashboard/AddTask/AddTask';
 import AllTask from './pages/Dashboard/UserDashboard/AllTask/AllTask';
+import PrivateRoute from './Routes/PrivateRoute';
 
 const router = createBrowserRouter([
   {
@@ -37,7 +38,7 @@ const router = createBrowserRouter([
   },
   {
     path: '/dashboard',
-    element: <Dashboard />,
+    element: <PrivateRoute><Dashboard /></PrivateRoute>,
     children: [
       {
         path: 'home',
