@@ -16,6 +16,9 @@ import UserProfile from './pages/Dashboard/UserDashboard/Userprofile/UserProfile
 import AddTask from './pages/Dashboard/UserDashboard/AddTask/AddTask';
 import AllTask from './pages/Dashboard/UserDashboard/AllTask/AllTask';
 import PrivateRoute from './Routes/PrivateRoute';
+import TaskList from './pages/TaskList/TaskList';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+const queryClient = new QueryClient();
 
 const router = createBrowserRouter([
   {
@@ -25,6 +28,10 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home />
+      },
+      {
+        path: '/taskList',
+        element: <TaskList/>
       },
       {
         path: '/login',
@@ -59,7 +66,9 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <AuthProvider>
+      <QueryClientProvider client={queryClient}>
       <RouterProvider router={router} />
+      </QueryClientProvider>
     </AuthProvider>
   </React.StrictMode>,
 )

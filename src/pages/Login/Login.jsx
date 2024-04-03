@@ -1,11 +1,13 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import SocialLogin from "../../components/SocialLogin/SocialLogin";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import {toast, Toaster} from "react-hot-toast";
 const Login = () => {
     const [loginError, setLoginError] = useState('');
+    const navigate = useNavigate();
     const { signIn } = useContext(AuthContext);
+    const location = useLocation();
     const handleLogin = e => {
         e.preventDefault();
         const form = new FormData(e.currentTarget);
@@ -16,6 +18,7 @@ const Login = () => {
         signIn(email, password)
             .then(result => {
                 console.log(result.user);
+                navigate(location?.state ? location.state : '/')
                 if (result.user) {
                     toast.success('Login has been successfully')
                 }

@@ -9,7 +9,7 @@ const Navbar = () => {
         <li><NavLink to='/' className="hover:text-sky-600 focus:border-b-2 focus:text-sky-600 focus:border-sky-600 pr-2">Home</NavLink></li>
         <li><NavLink to='/dashboard' className="hover:text-sky-600 focus:border-b-2 focus:text-sky-600 focus:border-sky-600 pr-2">Dashboard</NavLink></li>
         <li><NavLink to='/fqa' className="hover:text-sky-600 focus:border-b-2 focus:text-sky-600 focus:border-sky-600 pr-2">F</NavLink></li>
-        <li><NavLink to='/allTask' className="hover:text-sky-600 focus:border-b-2 focus:text-sky-600 focus:border-sky-600 pr-2">Task List</NavLink></li>
+        <li><NavLink to='/taskList' className="hover:text-sky-600 focus:border-b-2 focus:text-sky-600 focus:border-sky-600 pr-2">Task List</NavLink></li>
         {/* <li><NavLink to='/login' className='border-orange-500 rounded-lg'>Log In</NavLink></li> */}
     </>
 

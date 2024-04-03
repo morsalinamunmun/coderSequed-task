@@ -1,7 +1,7 @@
 
 import { useForm } from 'react-hook-form';
 
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import SocialLogin from '../../components/SocialLogin/SocialLogin';
 import { useContext } from 'react';
 import { AuthContext } from '../../Provider/AuthProvider';
@@ -11,6 +11,8 @@ import Swal from 'sweetalert2';
 
 const Signup = () => {
     const axiosPublic = useAxiosPublic();
+    const navigate = useNavigate();
+    const location = useLocation();
     const {
         register,
         handleSubmit,
@@ -39,6 +41,7 @@ const Signup = () => {
                                     showConfirmButton: false,
                                     timer: 1500
                                 });
+                                navigate(location?.state? location.state: '/')
                             }
                         })
                     })

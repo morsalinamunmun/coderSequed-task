@@ -81,7 +81,7 @@ const UserDashboard = ({ isSideMenuOpen, toggleSideMenu }) => {
                             >
                                 <div className="flex justify-between gap-2">
                                     <span>
-                                    <MdLogout />
+                                        <MdLogout />
                                     </span>
                                     <span>Log out</span>
                                 </div>
@@ -91,7 +91,7 @@ const UserDashboard = ({ isSideMenuOpen, toggleSideMenu }) => {
                 </div>
             </aside>
             <div className="fixed inset-0 -z-10 flex items-end bg-slate-300 bg-opacity-50 sm:items-center sm:justify-center"></div>
-             <aside
+            <aside
                 className={`fixed inset-y-0 z-20 flex-shrink-0 w-64 mt-16  ease-in-out duration-300 overflow-y-auto bg-white
         ${!isSideMenuOpen ? "-translate-x-full " : "translate-x-0"}
         
@@ -101,9 +101,11 @@ const UserDashboard = ({ isSideMenuOpen, toggleSideMenu }) => {
                     <div className="flex flex-col justify-between p-2 bg-white">
                         <div>
                             <div className="flex py-3 px-2 items-center">
-                                <h2 className="hidden md:block md:text-3xl text-xl font-semibold">
-                                    Chikitsha<span className="text-[#409bd4]">Hub</span>
-                                </h2>
+                                <NavLink to={"/"}>
+                                    <h2 className="md:text-2xl text-xl font-semibold">
+                                        CSq<span className="text-[#409bd4]">Task Manager</span>
+                                    </h2>
+                                </NavLink>
                             </div>
                             <div className="flex flex-col justify-between">
                                 <ul className="mt-6 leading-10">
@@ -134,7 +136,7 @@ const UserDashboard = ({ isSideMenuOpen, toggleSideMenu }) => {
                                             <span className="ml-4">All Task</span>
                                         </NavLink>
                                     </li>
-                                    
+
                                 </ul>
                             </div>
                         </div>
@@ -155,7 +157,7 @@ const UserDashboard = ({ isSideMenuOpen, toggleSideMenu }) => {
                 </div>
             </aside>
             <div className="flex flex-col flex-1 w-full overflow-y-auto ">
-                 <header className="z-40 py-5 bg-white fixed top-0 w-[1030px]">
+                <header className="z-40 py-5 bg-white fixed top-0 w-[1030px]">
                     <div className="flex justify-between">
                         <div className="flex items-center justify-between h-8 px-6">
                             <button
