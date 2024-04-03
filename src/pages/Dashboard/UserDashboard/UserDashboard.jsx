@@ -21,7 +21,7 @@ const UserDashboard = ({ isSideMenuOpen, toggleSideMenu }) => {
                             <div className="flex p-2  bg-white">
                                 <div className="flex py-3 px-2 items-center">
                                     <NavLink to={"/"}>
-                                        <h2 className="hidden md:block md:text-3xl text-xl font-semibold">
+                                        <h2 className="hidden md:block md:text-2xl text-xl font-semibold">
                                             CSq<span className="text-[#409bd4]">Task Manager</span>
                                         </h2>
                                     </NavLink>
