@@ -14,7 +14,7 @@ import AuthProvider from './Provider/AuthProvider';
 import Dashboard from './pages/Dashboard/Dashboard';
 import UserProfile from './pages/Dashboard/UserDashboard/Userprofile/UserProfile';
 import AddTask from './pages/Dashboard/UserDashboard/AddTask/AddTask';
-import AllTask from './pages/Dashboard/UserDashboard/AllTask/AllTask';
+import AllTask from './pages/Dashboard/UserDashboard/TaskManagement/Taskmanagement';
 import PrivateRoute from './Routes/PrivateRoute';
 import TaskList from './pages/TaskList/TaskList';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
@@ -56,7 +56,7 @@ const router = createBrowserRouter([
         element: <AddTask/>
       },
       {
-        path: 'allTask',
+        path: 'taskManagement',
         element: <AllTask/>
       }
     ]

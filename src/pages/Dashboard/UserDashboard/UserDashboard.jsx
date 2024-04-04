@@ -65,10 +65,10 @@ const UserDashboard = ({ isSideMenuOpen, toggleSideMenu }) => {
                                     <li className="relative px-2 py-1 ">
                                         <NavLink
                                             className="inline-flex items-center w-full text-sm font-semibold text-blue-950 transition-colors duration-150 cursor-pointer hover:text-blue-600py-2 px-4"
-                                            to={"allTask"}
+                                            to={"taskManagement"}
                                         >
                                             <BiTask className="text-lg" />
-                                            <span className="ml-4">All Task</span>
+                                            <span className="ml-4">Task Management</span>
                                         </NavLink>
                                     </li>
                                 </ul>
@@ -130,10 +130,10 @@ const UserDashboard = ({ isSideMenuOpen, toggleSideMenu }) => {
                                     <li className="relative px-2 py-1 ">
                                         <NavLink
                                             className="inline-flex items-center w-full text-sm font-semibold text-blue-950 transition-colors duration-150 cursor-pointer hover:text-blue-600py-2 px-4"
-                                            to="allTask"
+                                            to="taskManagement"
                                         >
                                             <BiTask className="text-lg" />
-                                            <span className="ml-4">All Task</span>
+                                            <span className="ml-4">Task Management</span>
                                         </NavLink>
                                     </li>
 
